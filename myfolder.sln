@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N1", "N1", "{447AFE1B-BA2B-4146-A0BD-8FF5EDF868B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N2", "N2", "{BF6FE966-ADC5-466E-8288-E2BA22A71C2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N3", "N3", "{108EF1DE-6CD6-48E5-9774-8933BF4352F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N4", "N4", "{82FC9C2E-C9F3-4AC6-9A59-EA70FD9FB9F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HT", "HT", "{AFCBE89F-281E-49D9-83E0-E1ECD3EB281B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "password_generator", "password_generate\password_generator.csproj", "{9730779F-3AB1-4E2D-BE04-A2EDA35E403E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email_checker", "Email_checker\Email_checker.csproj", "{60E9A00F-6848-4335-B5C0-BCBC430C2B04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9730779F-3AB1-4E2D-BE04-A2EDA35E403E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9730779F-3AB1-4E2D-BE04-A2EDA35E403E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9730779F-3AB1-4E2D-BE04-A2EDA35E403E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9730779F-3AB1-4E2D-BE04-A2EDA35E403E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E9A00F-6848-4335-B5C0-BCBC430C2B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E9A00F-6848-4335-B5C0-BCBC430C2B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E9A00F-6848-4335-B5C0-BCBC430C2B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E9A00F-6848-4335-B5C0-BCBC430C2B04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AFCBE89F-281E-49D9-83E0-E1ECD3EB281B} = {BF6FE966-ADC5-466E-8288-E2BA22A71C2E}
+		{9730779F-3AB1-4E2D-BE04-A2EDA35E403E} = {AFCBE89F-281E-49D9-83E0-E1ECD3EB281B}
+		{60E9A00F-6848-4335-B5C0-BCBC430C2B04} = {AFCBE89F-281E-49D9-83E0-E1ECD3EB281B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {843F7B42-6A97-4D7F-AEB0-1BC24C0D4B92}
+	EndGlobalSection
+EndGlobal
