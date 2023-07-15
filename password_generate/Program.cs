@@ -1,4 +1,5 @@
-﻿bool choose;
+﻿
+zzz:
 Console.WriteLine("sonlar qatnashsinmi: y/n");
 char choosenumber= char.Parse(Console.ReadLine());
 
@@ -11,36 +12,45 @@ char chooseOtherSimvols = char.Parse(Console.ReadLine());
 Console.WriteLine("password uzunligi: ");
 int lengthPassword = int.Parse(Console.ReadLine());
 
+string randomstring = "";
+string numberstring = "0123456789";
+string upperAndLowerString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+string OtherSimvols = "!#$%&()*+-.^_`";
+
+var stringChars = new char[lengthPassword];
 Random random = new Random();
-string str = "";
+
 if (choosenumber == 'y')
 {
-    choose = true;
+    randomstring += numberstring;
 }
 else if (choosenumber == 'n')
 {
-    choose = false;
+    randomstring +="";
 }
-else
-    Console.WriteLine("invalid choose");
- 
-for (int i  = 0; i < lengthPassword; i++)
+ if(chooseletters == 'y')
 {
-    if (choosenumber == 'y')
-    {
-        str += (random.Next(1, 10).ToString());
-    }
-
-    if (chooseletters == 'y')
-    {
-        str += (char)(random.Next(65, 91));
-    }
-
-    if (lengthPassword == 'y')
-    {
-        str += (char)(random.Next(33, 47));
-    }
-   
-    
+    randomstring += upperAndLowerString;
 }
-Console.WriteLine(str.Count());
+else if (chooseletters == 'n')
+{
+    randomstring +="";
+}
+if (chooseOtherSimvols == 'y')
+{
+    randomstring += OtherSimvols;
+}
+else if (chooseOtherSimvols == 'n')
+{
+    randomstring += "";
+}
+
+for (int i = 0; i < stringChars.Length; i++)
+{
+    stringChars[i] = randomstring[random.Next(randomstring.Length)];
+    Console.Write(stringChars[i]);
+}
+Console.WriteLine('\n');
+goto zzz;
+
+

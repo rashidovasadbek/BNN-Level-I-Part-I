@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography;
-
+﻿zzz:
 Console.WriteLine("Emailingizni kiriting:");
 string email = Console.ReadLine();
 bool  check = false;
@@ -46,3 +45,4 @@ if (check == true)
 else 
     Console.WriteLine(temp);
 
+goto zzz;
