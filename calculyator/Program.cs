@@ -9,14 +9,12 @@
     
     switch (click) 
     {
-        case '*':Console.WriteLine("Result:"+(num1 * num2)); break;
+        case '*': Console.WriteLine("Result:"+(num1 * num2)); break;
         case '/': Console.WriteLine("Result:" + (num1 / num2)); break;
         case '-': Console.WriteLine("Result:" + (num1 - num2)); break;
         case '+': Console.WriteLine("Result:" + (num1 + num2)); break;
-        case 'e':Console.WriteLine("Thank you for using calculator"); return;
+        case 'e': Console.WriteLine("Thank you for using calculator"); return;
         default: Console.WriteLine("invalid choose:");break;
     }
-    
-
 }
 

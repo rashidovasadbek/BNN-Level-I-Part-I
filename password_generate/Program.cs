@@ -28,7 +28,7 @@ else if (choosenumber == 'n')
 {
     randomstring +="";
 }
- if(chooseletters == 'y')
+if(chooseletters == 'y')
 {
     randomstring += upperAndLowerString;
 }
