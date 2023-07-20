@@ -13,7 +13,8 @@ namespace problem
         public DateTime BirthDay { get; set; }
         public decimal Payment { get; set; }
         public string EduType { get; set; }
-        public bool IsPayment { get; set; }
+        public decimal PaymentAmount { get; set; }
+
 
         public int GetAge()
         {
@@ -23,6 +24,24 @@ namespace problem
         {
             string result = FullName.PadRight(45);
             return result;
+        }
+    
+        public string GetAmount()
+        {
+            decimal amout = Payment - PaymentAmount;
+            if (amout < 0) return $"{Math.Abs(amout)} haqdor".PadRight(5);
+            else return $"{amout} qarzdor".PadRight(5);
+        }
+
+        public void GetTableAmount(Student student, string EduType)
+        {
+        
+                if (student.EduType.Equals("DotNET"))
+                {
+                    decimal kantrakt = student.Payment;
+                    Console.WriteLine(value: $"{student.GetShotName()}\t\t{kantrakt}\t\t{student.PaymentAmount}\t\t{student.GetAmount()}");
+                }
+            
         }
     }
 }
