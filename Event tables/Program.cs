@@ -24,7 +24,7 @@ for  (int i = 0; i < eventName.Count -1; i++)
 {
     for(int j = i + 1; j < eventName.Count; j++)
     {
-        if (eventName[i].Length < eventName[j].Length)
+        if (eventName[i].Length > eventName[j].Length)
         {
             temp = eventName[i];
             eventName[i] = eventName[j];
