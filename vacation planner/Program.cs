@@ -12,8 +12,6 @@ const string NameToken = "{{Name}}";
 const string CompanyNameToken = "{{CompanyName}}";
 const string TicketDateToken = "{{TicketDate}}";
 
-var TicketDate = new TimeOnly();
-
 
 var timePlane = new Dictionary< TimeOnly, int>();
 timePlane.Add(new TimeOnly(7, 0),4);
@@ -25,10 +23,12 @@ var massages = new Dictionary<string,string>();
 massages.Add("UnderAge", "Uzr hurmatli {{Name}} siz loyhadan foydalanishga kichkinasiz");
 massages.Add("GoldenAger", "Uzr hurmatli {{Name}} siz loha yoshlar uchun mo'jallangan\"");
 
+
 var emails =  new LinkedList<string>();
 emails.AddFirst("Hello {{Name}}. Welcome to onboard. {{CompanyName}} Team.");
 emails.AddLast("Your data is being processed and we will inform updates for you as soon as possible. {{CompanyName}} Team");
 emails.AddLast("Congratulations! Your flight ticket is booked for {{TicketDate}}. {{CompanyName}} Team.");
+
 
 // ro'hatdan o'tish jarayoni
 Console.WriteLine("ismingizni kiriting:");
