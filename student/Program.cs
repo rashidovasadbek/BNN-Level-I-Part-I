@@ -48,6 +48,7 @@ aaa:
 Console.WriteLine("1.Talabalar ro'yhati:");
 Console.WriteLine("2.To'lovlar");
 Console.WriteLine("3.Talabalar baxosi");
+
 Console.WriteLine("0.<-orqaga");
 
 var choose = Console.ReadKey().KeyChar;
@@ -62,6 +63,8 @@ switch (choose)
         Console.WriteLine("2 - Dizayn");
         Console.WriteLine("3 - SMM");
         Console.WriteLine("4 - Python");
+        Console.WriteLine("5.Talaba qo'shish ");
+        Console.WriteLine("6.Talaba o'chirish");
         Console.WriteLine("0 <-orqaga");
         
         var choosefakulty  = Console.ReadKey().KeyChar;
@@ -90,7 +93,9 @@ switch (choose)
                         Console.WriteLine($"{item.Id} - {item.FullName}-{item.GetAge()} yosh");
                     }
                 }
-                break;
+                Console.WriteLine("0 <-orqaga");
+                goto zzz;
+                 
             case '3':
                 Console.Clear();
                 foreach (var item in student)
@@ -100,7 +105,9 @@ switch (choose)
                         Console.WriteLine($"{item.Id} - {item.FullName}-{item.GetAge()} yosh");
                     }
                 }
-                break;
+                Console.WriteLine("0 <-orqaga");
+                goto zzz;
+            
             case '4':
                 Console.Clear();
                 foreach (var item in student)
@@ -110,16 +117,57 @@ switch (choose)
                         Console.WriteLine($"{item.Id} - {item.FullName}-{item.GetAge()} yosh");
                     }
                 }
+                Console.WriteLine("0 <-orqaga");
+                goto zzz;
+               
+            case '5':
+                Console.Clear();
+                
+                Console.WriteLine();
+                Console.WriteLine("FIO: ");
+                string FIO = Console.ReadLine();
+                Console.WriteLine("Yo'nalish: ");
+                string eduType = Console.ReadLine();
+                Console.WriteLine("Birthday: ");
+               
+                var yil = int.Parse(Console.ReadLine());
+                var oy = int.Parse(Console.ReadLine());
+                var kun = int.Parse(Console.ReadLine());
+                var birthDay = new DateTime(yil,oy,kun);
+            
+                student.Add(new Student
+                {
+                    Id = student.Last().Id + 1,
+                    FullName = FIO,
+                    BirthDay = birthDay,
+                    EduType = eduType
+                }) ;
+                Console.WriteLine("0<-orqaga");
+                char chooseA = Console.ReadKey().KeyChar; 
+                if(chooseA == '0')
+                    goto zzz;
                 break;
+
+            case '6':
+                Console.WriteLine("O'chiriladigan talabani id kiriting:");
+                var id = int.Parse(Console.ReadLine());
+                student.RemoveAt(id);
+                Console.WriteLine($"{id} dagi talaba o'chirildi");
+                Console.WriteLine("0 <-orqaga");
+                goto zzz;
+                break;
+            
             case '0':
                 Console.Clear();
                 goto aaa;
+            
             default:
                 Console.Clear ();
                 Console.WriteLine("invalid choose!");
                 break;
         }
         break;
+    
     case '2':
         Console.WriteLine("1.DotNet");
         Console.WriteLine("2.SMM");
@@ -156,6 +204,7 @@ switch (choose)
 
         }
         break;
+    
     case '3':
         Console.Clear();
 
@@ -177,6 +226,12 @@ switch (choose)
 
             Console.WriteLine("\n");
         }
+        break;
+    
+    case '4':
+
+        
+   
         break;
 }
 
