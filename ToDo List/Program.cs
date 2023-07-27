@@ -7,10 +7,10 @@ Console.WriteLine("ToDo List".PadLeft(30));
 Console.WriteLine("Display all-> d");
 Console.WriteLine("mark done-> m");
 Console.WriteLine("add-> a");
-
+var todolist = new ToDoList();
 while (true)
 {
-    var todolist = new ToDoList();
+  
     Console.WriteLine();
     Console.Write("Choose Command: ");
     var choose = char.Parse(Console.ReadLine());
@@ -45,14 +45,13 @@ while (true)
                 Console.WriteLine("task qo'shish-> y");
                 Console.WriteLine("ortga-> 0");
 
-
                 var chooseA = char.Parse(Console.ReadLine());
                 if (chooseA == 'y')
                 {
                     Console.Write("task name:");
                     var task_name = Console.ReadLine();
-                    bool done = false;
-                    todolist.tasklist.Add(new ToDo(task_name, done));
+                    todolist.Add(new ToDo(task_name, false));
+                    
                 }
                 else if (chooseA == '0')
                 {
@@ -98,7 +97,7 @@ public class ToDoList
 
         for(var indexA = 0; indexA < tasklist.Count; indexA++)
         
-            Console.WriteLine(tasklist[indexA]);
+            Console.WriteLine(tasklist[indexA].taskName);
         
     }
 
@@ -108,8 +107,8 @@ public class ToDoList
         Console.Write("qaysi planni bajardingiz:");
         var index = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("hello");
-            tasklist[index -1].Done = true;
+            tasklist[index - 1].Done = true;
+            tasklist[index - 1].taskName = $"Task {tasklist[index - 1].taskName} - mark as done";
             Console.WriteLine($"Task {tasklist[index -1].taskName} - mark as done");
      
         
@@ -118,7 +117,8 @@ public class ToDoList
     //Add() -List ga yangi vazifa qo'shish 
     public void Add(ToDo taskname)
     {
-           tasklist.Add(taskname);
+         
+        tasklist.Add(taskname);
     }
 
     public void Menu()
