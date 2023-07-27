@@ -8,39 +8,33 @@ Console.WriteLine("pause - pause");
 Console.WriteLine("play - play");
 
 MusicPlayer player = new MusicPlayer();
-player.tracks.Add(new Track("ona","Otabek Muhkamov"));
+player.tracks.Add(new Track("ona", "Otabek Muhkamov"));
 player.tracks.Add(new Track("dada", "Mirjalol Alimov"));
 player.tracks.Add(new Track("fazo", "Bekzod Haqqiyev"));
 player.tracks.Add(new Track("vatan", "Ozdbek Nazarbekov"));
+player.momentTracks = player.tracks[0];
 while (true)
 {
     Console.WriteLine();
     Console.Write("Choose Command: ");
     var choose = Console.ReadLine();
+    
 
     switch (choose)
     {
         case "n":
-            //Console.WriteLine(player.momentTracks);
-            int idx = 0;
-            while (idx < player.tracks.Count)
+            player.Next();
+            Console.WriteLine("ortga-> 0");
+            var chooseB = char.Parse(Console.ReadLine());
+            if (chooseB == '0')
             {
-                player.Next();
-                idx++;
+                Console.Clear();
+                player.Menu();
             }
-                Console.WriteLine(player.momentTracks);
-                Console.WriteLine("ortga-> 0");
-                var chooseB = char.Parse(Console.ReadLine());
-                if (chooseB == '0')
-                {
-                    Console.Clear();
-                    player.Menu();
-                }
-                
-            
             break;
-  
+
         case "p":
+            player.Previous();
             Console.WriteLine("ortga-> 0");
             var chooseC = char.Parse(Console.ReadLine());
             if (chooseC == '0')
@@ -51,6 +45,8 @@ while (true)
             break;
 
         case "pause":
+
+            player.Pause();
             Console.WriteLine("ortga-> 0");
             var chooseD = char.Parse(Console.ReadLine());
             if (chooseD == '0')
@@ -75,7 +71,7 @@ while (true)
 
 public class Track
 {
-    public Track(string name, string  auther)
+    public Track(string name, string auther)
     {
         Name = name;
         Auther = auther;
@@ -84,32 +80,59 @@ public class Track
 
     public string Name { get; set; }
     public string Auther { get; set; }
-  
+
 }
 
 public class MusicPlayer
 {
     public List<Track> tracks = new List<Track>();
 
-    public string momentTracks = "";
-    
+    public Track momentTracks;
+
     public void Next()
     {
-        int index = 3;
-        if (index == tracks.Count - 1)
-        {
-            momentTracks = tracks[0].Name;
-            index = 0;
-        }
+        if (momentTracks == tracks[tracks.Count - 1])
+            momentTracks = tracks[0];
         else
-            momentTracks = tracks[++index].Name;
-        
+        {
+            for (var i = 0; i < tracks.Count; i++)
+            {
+                if (tracks[i] == momentTracks)
+                {
+                    momentTracks = tracks[i+1];
+                    break;
+                }
+            }
+        }
+        Play();
     }
-    public void Previous() { }
-    public void Pause() { }
-    public void Play() { }
+    public void Previous() 
+    {
+        if (momentTracks == tracks[0])
+            momentTracks = tracks[tracks.Count -1];
+        else
+        {
+            for (var i = tracks.Count - 1 ; i > 0; i--)
+            {
+                if (tracks[i] == momentTracks)
+                {
+                    momentTracks = tracks[i - 1];
+                    break;
+                }
+            }
+        }
+        Play();
+    }
+    public void Pause()
+    {
+        Console.WriteLine($"Play - {momentTracks.Name}");
+    }
+    public void Play()
+    {
+        Console.WriteLine($"Play - {momentTracks.Name}");
+    }
 
-    public void Menu() 
+    public void Menu()
     {
         Console.WriteLine("Music Player".PadLeft(30));
         Console.WriteLine("next - n");
