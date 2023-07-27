@@ -7,7 +7,9 @@ Console.WriteLine("ToDo List".PadLeft(30));
 Console.WriteLine("Display all-> d");
 Console.WriteLine("mark done-> m");
 Console.WriteLine("add-> a");
+
 var todolist = new ToDoList();
+
 while (true)
 {
   
@@ -110,8 +112,6 @@ public class ToDoList
             tasklist[index - 1].Done = true;
             tasklist[index - 1].taskName = $"Task {tasklist[index - 1].taskName} - mark as done";
             Console.WriteLine($"Task {tasklist[index -1].taskName} - mark as done");
-     
-        
     }
 
     //Add() -List ga yangi vazifa qo'shish 
