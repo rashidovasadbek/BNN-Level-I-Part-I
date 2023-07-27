@@ -1,5 +1,4 @@
 ﻿
-
 Console.WriteLine("1.Mahsulot topib qo'shish");
 Console.WriteLine("2.Mahsulot topoib o'chirish");
 var choose = char.Parse(Console.ReadLine());
@@ -40,15 +39,6 @@ switch (choose)
         break;
 
 }
-
-
-
-
-
-
-
-
-
 public class ShoppingCart
 {
     public Dictionary<Product,int> items = new Dictionary<Product,int>();    
