@@ -7,8 +7,8 @@ PasswordGenerate passwordGenerateB = new PasswordGenerate(8, true);
 //Console.WriteLine(passwordGenerateB.Generate());
 SecurePasswordGenerator securePasswordGenerator = new SecurePasswordGenerator(8,true,true);
 //Console.WriteLine(securePasswordGenerator.GenerateA(true));
-UniqePasswordGenerate uniqePasswordGenerate = new UniqePasswordGenerate(8, true);
-uniqePasswordGenerate.GenerateUniqePassword();
+UniqePasswordGenerate uniqePasswordGenerate = new UniqePasswordGenerate(8, true,true);
+//uniqePasswordGenerate.GenerateUniqePassword();
 public class PasswordGenerate
 {
     public int Length { get; set; }
@@ -32,7 +32,7 @@ public class PasswordGenerate
         while (pssword.Length < Length)
         {
             if (HasLatters)
-                pssword += letters[random.Next(letters.Length)];
+               pssword += letters[random.Next(letters.Length)];
 
             if (HasDigits)
                pssword += numbers[random.Next(numbers.Length)];
@@ -48,8 +48,7 @@ public class SecurePasswordGenerator : PasswordGenerate
     public bool HasSimbols {get; set;}
     public SecurePasswordGenerator(int length, bool haslatters, bool hasDigits = false)
         : base(length, haslatters, hasDigits)
-    {
-        
+    { 
     }
 
     public string GenerateA(bool hasSymbols)
@@ -77,7 +76,6 @@ public class SecurePasswordGenerator : PasswordGenerate
      
     }
 
-
 }
 
 public class UniqePasswordGenerate : SecurePasswordGenerator
@@ -92,7 +90,6 @@ public class UniqePasswordGenerate : SecurePasswordGenerator
     {
 
         List<string> passwordList = new List<string>();
-        //passwordList.Add(" ");
         Random random = new Random();
 
         string numbers = "123456789";
