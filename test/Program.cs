@@ -7,7 +7,7 @@ templateService.Add("Account Blocked", "Hurmatli {{User}}, ushbu xabar sizni akk
 Console.WriteLine("ismingizni kiriting:");
 string name = Console.ReadLine();
 Console.WriteLine(templateService.GetRegistrationTemplate(name));
-Console.WriteLine(templateService.GetAccountBlockedTemplate(name));
+//Console.WriteLine(templateService.GetAccountBlockedTemplate(name));
 
 
 public class EmailTemplates
@@ -37,11 +37,11 @@ public class EmailTemplateService
 
     public string GetRegistrationTemplate(string username)
     {
-        return username.Replace(MessageConstants.UserNameToken, username);
+        return $"{emailTemplates[0].Subject}\n {emailTemplates[0].Content.Replace(MessageConstants.UserNameToken, username)}";
     }
 
     public string GetAccountBlockedTemplate(string username)
     {
-        return username.Replace(MessageConstants.UserNameToken, );
+        return $"{emailTemplates[1].Subject}\n {emailTemplates[1].Content.Replace(MessageConstants.UserNameToken,username)}";
     }
 }
