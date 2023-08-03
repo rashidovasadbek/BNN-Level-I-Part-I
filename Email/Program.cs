@@ -7,7 +7,7 @@ var vaildEmail = new Email
     Subject = "ishgajoylashish",
     Content = "shucompaniyadaishlash"
 };
-Console.WriteLine(vaildEmail);
+//Console.WriteLine(vaildEmail);
 
 var invaildEmail = new Email
 {
