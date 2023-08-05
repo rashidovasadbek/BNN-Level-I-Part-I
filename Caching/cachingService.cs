@@ -16,14 +16,17 @@ public class OrderCacheService
         return _instance;
     }
 
-    public string Get(string key)
+    public int Get(string key)
     {
-
-        return null;
+        if (keyValuePairs.ContainsKey(key))
+            return keyValuePairs[key];
+        return default;
     }
 
     public void Set(string key, int value)
     {
-        
+        if(keyValuePairs.ContainsKey(key))
+            keyValuePairs[key] = value;
+
     }
 }

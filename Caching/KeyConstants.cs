@@ -1,24 +1,33 @@
-﻿
-
-public static class CacheKeyConstants
+﻿public static class CacheKeyConstants
 {
-    public static string Sum(List<int> sum)
+    public static string Sum(List<int> hashcode)
     {
-        return "";
+        int sum = 0;
+        foreach (int item in hashcode)
+        {
+           sum += item.GetHashCode();
+        }
+        return $"{sum}-sum";
     }
 
-    public static string Max(List<int> max)
+    public static string Max(List<int> hashcode)
     {
-
-        return "";
+        int max = 0;
+        foreach (var item in hashcode)
+        {
+            max += item.GetHashCode();
+        }
+        return $"{max}-max";
     }
 
-    public static string Min(List<int> min)
+    public static string Min(List<int> hashcode)
     {
-        return "";
+        int min = 0;
+        foreach (var item in hashcode)
+        {
+            min += item.GetHashCode();
+        }
+        return $"{min}-min";
     }
-    public void Add(int amount)
-    {
-
-    }
+ 
 }
