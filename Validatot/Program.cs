@@ -6,7 +6,4 @@ Console.WriteLine((Validatot.IsValidEmailAddres("@test@gmail.com", out var forma
 Console.WriteLine(Validatot.IsValidAge(16));
 
 Console.WriteLine(Validatot.IsvalidPhoneNumber("As99891234567", out string fortmatNumeber));
-    
-
-
 

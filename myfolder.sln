@@ -199,6 +199,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validatot", "Validatot\Vali
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggregation", "Aggregation\Aggregation.csproj", "{38DE4AD1-B1BF-458F-BBAB-5F1124802350}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sleep Qualty", "sleep Qualty\sleep Qualty.csproj", "{262FBBF1-F930-4737-8DCD-AB140CE3EA83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -413,6 +415,10 @@ Global
 		{38DE4AD1-B1BF-458F-BBAB-5F1124802350}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38DE4AD1-B1BF-458F-BBAB-5F1124802350}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38DE4AD1-B1BF-458F-BBAB-5F1124802350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{262FBBF1-F930-4737-8DCD-AB140CE3EA83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262FBBF1-F930-4737-8DCD-AB140CE3EA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262FBBF1-F930-4737-8DCD-AB140CE3EA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262FBBF1-F930-4737-8DCD-AB140CE3EA83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -496,6 +502,7 @@ Global
 		{ED09B601-36DD-42EC-B5A4-2B44E894693B} = {F86C3E71-5A0D-4BCA-8B81-05EBEA7D1CD5}
 		{4F66677C-2873-472A-9252-3AAA46A9925E} = {ED09B601-36DD-42EC-B5A4-2B44E894693B}
 		{38DE4AD1-B1BF-458F-BBAB-5F1124802350} = {ED09B601-36DD-42EC-B5A4-2B44E894693B}
+		{262FBBF1-F930-4737-8DCD-AB140CE3EA83} = {FA8C2CF8-E826-4CAD-AD17-CC070F41FCBF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {843F7B42-6A97-4D7F-AEB0-1BC24C0D4B92}
