@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oraliq_nazorat_registration", "Oraliq_nazorat_registration\Oraliq_nazorat_registration.csproj", "{D659E16B-034E-47C3-BF26-A3D350C0D33C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D659E16B-034E-47C3-BF26-A3D350C0D33C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D659E16B-034E-47C3-BF26-A3D350C0D33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D659E16B-034E-47C3-BF26-A3D350C0D33C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D659E16B-034E-47C3-BF26-A3D350C0D33C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0D1BCA3-FFD9-426E-8424-E0D43D5B0A10}
+	EndGlobalSection
+EndGlobal

@@ -38,11 +38,11 @@ for (int i = 0; i < sleepday.Length - 1; i++)
     int currnetsleepBreakCount = sleepBreakCount[i];
     int nextsleepBreakCount = sleepBreakCount[i + 1];
     
-    if (currentDate < nextDate)
+    if (currentDate > nextDate)
     {
         DateOnly temp = currentDate;
-        currentDate = nextDate;
-        nextDate = temp;
+        sleepday[i] = nextDate;
+        sleepday[i + 1] = temp;
     }
 
     if(currentduraction > nextduraction)
@@ -58,11 +58,6 @@ for (int i = 0; i < sleepday.Length - 1; i++)
         sleepBreakCount[i] = nextsleepBreakCount;
         sleepBreakCount[i + 1] = temp;
     }
-}
-
-foreach(var item in sleepday)
-{
-    Console.WriteLine(item);
 }
 
 float PreviousDayMissingSleepHours = 0;
