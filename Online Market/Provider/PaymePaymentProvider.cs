@@ -16,7 +16,7 @@ public class PaymePaymentProvider : IPaymentProvider
             return false;
         else
         {
-            if (sourceCard.Balance > minproviderSum )
+            if (sourceCard.Balance >= minproviderSum )
             {
                 sourceCard.Balance -= amount + (TransferInterest * sourceCard.Balance) / 100;
                 destinationCard.Balance += amount;
