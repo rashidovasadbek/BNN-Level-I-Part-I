@@ -8,6 +8,8 @@ using System.Text.RegularExpressions;
 public class Registration 
 { 
     private List<User> users = new List<User>();
+    
+    //namelarni tekshirsh
     public bool CheckName(string name, string lastname, string middlename)
     {
         if(!Regex.IsMatch(name, "^[a-zA-Z'-]+$"))
@@ -19,13 +21,14 @@ public class Registration
         return true;
     }
 
+    //emailni tekshirish
     public bool CheckEmailAddress(string emailaddress)
     {
         if(!Regex.IsMatch(emailaddress, "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"))
             return false;
         return true;
     }
-
+    //agar ikki usernamelar nir xil bo'lsa yangi username generate qilish
     public string GenerateUserName()
     {
         string update = "";
@@ -37,10 +40,11 @@ public class Registration
         return update;
     }
 
+    // listga userlarni tekshirib qoshish 
     private bool Add(string name,string lastname, string middlename,string emailaddress,string username = "")
     {
         bool check = false;
-        if ( string.IsNullOrEmpty(name) && !CheckName(name, lastname, middlename))
+        if (string.IsNullOrEmpty(name) && !CheckName(name, lastname, middlename))
         {
             Console.WriteLine("invalid name");
             return false;
@@ -76,17 +80,18 @@ public class Registration
         return check;
     }
 
+    //userlarni registratsiyadan o'tkazish
     public void Registor(string name, string lastname, string middlename, string email, string username = "")
     {
         var user = Add(name, lastname, middlename, email, username);
         if (user is true)
-            SendEmail(email, username);
+            SendEmail(email, username);     
         var sendemail = SendEmail(email, username);
         if (sendemail is true)
             User.Active_user = true;
     }
 
-
+    // userga email jo'natish
     public bool SendEmail(string receiverAddress, string username)
     {
         try
@@ -106,6 +111,7 @@ public class Registration
             return false;
         }
     }
+   //consolga chiqarish
     public void Display()
     {
        foreach(var item in users)

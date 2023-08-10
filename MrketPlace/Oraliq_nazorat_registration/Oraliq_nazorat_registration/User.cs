@@ -17,6 +17,8 @@
         UserName = username;
         Active_user = active_user;
     }
+
+    // string methodini ovvride qilib  displayga bervorish
     public override string ToString()
     {
         return $"{Name} | {LastName} | {MiddleName} | {UserName} | {Active_user}";
