@@ -1,0 +1,18 @@
+﻿var numbers = new List<int>();  
+numbers.Add(49);
+numbers.Add(231);
+numbers.Add(12);
+numbers.Add(43);
+numbers.Add(34);
+numbers.Add(53);
+numbers.Add(69);
+numbers.Add(27);
+numbers.Add(18);
+numbers.Add(9);
+numbers.Add(-10);
+var positiveNumbers = numbers.All(numbers=> numbers > 0);
+Console.WriteLine("is it all positive: "+positiveNumbers);
+var dashnumber = numbers.Any(numbers=> numbers % 2 == 0);
+Console.WriteLine("Are there any dash numbers in: " + dashnumber);
+var selectNumber = numbers.Contains(9);
+Console.WriteLine("ichida 3 && 9 sonlari bormi:"+selectNumber);
